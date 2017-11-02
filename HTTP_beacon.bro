@@ -44,17 +44,20 @@ function diff(v :vector of time): count
 {
     local ts:vector of count;
     local len:vector of count;
-   
     local i=0;local j=0;local k=0;
+    
+    #calculate the time difference between consecutive packets
     while(i<|v|-1)
     {
         ts[j]=double_to_count(interval_to_double(v[i+1]-v[i]));
         i=i+1;
         j=j+1;
     }
+    
     #check for beacons
     if( |ts|>5 && stdev(ts) < 1.0 )
         return 1;
+    
     #check to clean old data
     if(|ts| > 50 || (current_time()-v[0]>=72 hr && |ts|<10))
         return 0;
