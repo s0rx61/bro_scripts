@@ -1,3 +1,4 @@
+#detects HTTP beaconing activity
 module HTTP_beacon;
 
 global time_vec: table[addr,string] of vector of time;
