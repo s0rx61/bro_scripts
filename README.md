@@ -1,1 +1,4 @@
-# bro_scripts
+# Threat Detection using bro scripts 
+
+HTTP beacon activity 
+ICMP tunnel activity 
